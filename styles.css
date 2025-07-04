@@ -1,3 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --header-height: calc(100vh * 350 / 2048);
+    --sidebar-width: calc(100vw * 600 / 2880);
+}
+
 body {
-    background-color: tomato;
+    display: grid;
+    grid-template: var(--header-height) calc(100vh - var(--header-height)) / var(--sidebar-width) 1fr;
+}
+
+.header {
+    background-color: #FFFFFF;
+    grid-area: 1 / 2 / span 1 / -1;
+}
+
+.sidebar {
+    background-color: #1992D4;
+    grid-row: 1 / -1;
+}
+
+.main-content {
+    background-color: #E2E8F0;
+/*  grid-area:                   deduced from the header and sidebar                                */
 }
