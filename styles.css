@@ -13,17 +13,130 @@ body {
     grid-template: var(--header-height) calc(100vh - var(--header-height)) / var(--sidebar-width) 1fr;
 }
 
-.header {
+#header {
+    padding: 1.6vh 4.3vw 1.6vh 3vw;
     background-color: #FFFFFF;
     grid-area: 1 / 2 / span 1 / -1;
+    display: grid;
 }
 
-.sidebar {
+#header-up {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+}
+
+#searchbar {
+    margin-right: 2.1vw;
+    background-color: red;      /* dummy */
+}
+
+#user-name {
+    margin-left: 2.1vw;
+    padding-right: 1.2vw;
+    background-color: blue;     /* dummy */
+}
+
+#header-down {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+}
+
+#user-info {
+    margin-right: 2.1vw;
+    background-color: yellow;   /* dummy */
+}
+
+#buttons {
+    margin-left: 2.1vw;
+    background-color: orange;   /* dummy */
+}
+
+#sidebar {
+    padding: 1.6vh;
+    color: white;
     background-color: #1992D4;
     grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: calc(var(--header-height) / 2) 6fr 11fr;
 }
 
-.main-content {
+#sidebar ul > li {
+    list-style-type: none;
+}
+
+#sidebar ul > *:nth-child(odd) {
+    background-color: black;    /* dummy */
+}
+
+#sidebar ul > *:nth-child(even) {
+    background-color: grey;     /* dummy */
+}
+
+#logo {
+    text-align: center;
+    background-color: brown;    /* dummy */
+}
+
+#menu-1, #menu-2 {
+    font-size: larger;
+    font-weight: bolder;
+    padding-left: 0.5vw;
+}
+
+#menu-1 {
+    padding-bottom: 75px;
+}
+
+#menu-2 {
+    padding-top: 75px;
+}
+
+#main-content {
+    padding: 2.5vh 2.25vw 5.12vh 1.38vw;
     background-color: #E2E8F0;
 /*  grid-area:                   deduced from the header and sidebar                                */
+    display: grid;
+    grid-template: 3.9vh 69.8vh / 54.5vw 1fr;
+}
+
+#projects-title {
+    grid-column: 1 / -2;
+    background-color: orange;           /* dummy */
+}
+
+#projects-container {
+    grid-row: 2 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6vh;
+}
+
+#projects-container div:nth-child(odd) {
+    background-color: blue;             /* dummy */
+}
+
+#projects-container div:nth-child(even) {
+    background-color: blueviolet;       /* dummy */
+}
+
+#right-container {
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: 3.9vh 1fr 3.9vh 1fr;
+}
+
+#announcements-title {
+    background-color: blue;           /* dummy */
+}
+
+#announcements-container {
+    background-color: blueviolet;       /* dummy */
+}
+
+#trending-title {
+    background-color: blue;           /* dummy */
+}
+
+#trending-container {
+    background-color: blueviolet;       /* dummy */
 }
