@@ -41,24 +41,59 @@ body {
 }
 
 #header-up {
+    font-weight: 700;
     display: grid;
     grid-template-columns: 4fr 2fr;
+}
+
+#header-up span::before, #user-info > span::before {
+    display: inline-block;
+    content: ' ';
 }
 
 #searchbar {
     margin-right: 2.1vw;
     padding-right: 5vw;
-    display: grid;
-    grid-template-columns: 8.4vh auto;
+    display: flex;
+    align-items: center;
     gap: 1.6vh;
 }
 
+#searchbar > span::before {
+    background-image: url("images/magnify.svg");
+    width: 4vh;
+    height: 4vh;
+    filter: invert(39%) sepia(18%) saturate(10%) hue-rotate(314deg) brightness(94%) contrast(91%);
+}
+
+#searchbar > input {
+    flex-grow: 1;
+    margin: 1.6vh 0;
+    background-color: #E2E8F0;
+    border-radius: 10px;
+}
+
 #user-name {
-    margin-left: 2.1vw;
+    margin-left: 8.5vw;
     padding-right: 1.2vw;
-    display: grid;
-    grid-template-columns: repeat(2, 8.4vh) 1fr;
-    gap: 1.6vh;
+    display: flex;
+    align-items: center;
+    gap: 2.6vh;
+}
+
+#user-name > span:nth-child(1)::before {
+    background-image: url("images/bell-ring-outline.svg");
+    width: 2vh;
+    height: 2vh;
+    filter: invert(0%) sepia(1%) saturate(0%) hue-rotate(184deg) brightness(94%) contrast(100%);
+}
+
+#user-name > span:nth-child(2)::before {
+    background-image: url("images/aphex.jpeg");
+    background-size: contain;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
 }
 
 #header-down {
@@ -68,12 +103,20 @@ body {
 
 #user-info {
     margin-right: 2.1vw;
-    display: grid;
-    grid-template-columns: 8.4vh 1fr;
+    display: flex;
+    align-items: center;
     gap: 3vh;
 }
 
-#user-info div:nth-child(2) {
+#user-info > span::before {
+    background-image: url("images/aphex.jpeg");
+    background-size: contain;
+    width: 7vh;
+    height: 7vh;
+    border-radius: 50%;
+}
+
+#user-info > div {
     display: grid;
 }
 
@@ -88,15 +131,20 @@ body {
 }
 
 #buttons {
-    margin-left: 5.1vw;
+    margin-left: 10.1vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.6vw;
 }
 
-#buttons div {
+#buttons > button {
     text-align: center;
-    padding: 1.6vh 1.6vw;
+    margin: 1.3vh 0.7vw;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #1992D4;
+    border-radius: 20px;
+    border-style: none;
 }
 
 #sidebar {
@@ -118,7 +166,7 @@ body {
 #sidebar span::before {
     display: inline-block;
     content: ' ';
-    filter: invert(100%) sepia(0%) saturate(7464%) hue-rotate(185deg) brightness(97%) contrast(100%);
+    filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(150deg) brightness(109%) contrast(101%);
 }
 
 #logo {
@@ -272,6 +320,6 @@ body {
 *   DUMMY, TO BE REMOVED LATER
 */
 
-*:not(#sidebar *) {
+*:not(#sidebar *, #header *) {
     border: 1px solid black;
 }
